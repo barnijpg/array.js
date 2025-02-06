@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pegawai</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ecef; 
+            margin: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: green; 
+        }
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        th, td {
+            border: 1px solid green;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: green;
+            color: white; 
+        }
+        tr:nth-child(even) {
+            background-color: #f2f9ff; 
+        }
+        tr:nth-child(odd) {
+            background-color: #ffffff; 
+        }
+        tr:hover {
+            background-color: #d1ecf1; 
+        }
+        td {
+            transition: background-color 0.3s; 
+        }
+    </style>
+</head>
+<body>
+
+<h2>Data Pegawai</h2>
+
+<table id="pegawaiTable">
+    <tr>
+        <th>Nama</th>
+        <th>Jenis Kelamin</th>
+        <th>umur</th>
+        <th>Gaji</th>
+        <th>jabatan</th>
+    </tr>
+</table>
+
+<script>
+    const pegawai = [
+        {
+            nama: "bunga",
+            jenisKelamin: "Perempuan",
+            umur: 30,
+            gaji: "Rp 9.000.000",
+            jabatan:"HRD"
+        },
+        {
+            nama: "abdullah",
+            jenisKelamin: "Pria",
+            umur: 28,
+            gaji: "Rp 9.500.000",
+            jabatan:"keuangan"
+        },
+        {
+            nama: "siti",
+            jenisKelamin: "Perempuan",
+            umur: 25,
+            gaji: "Rp 9.000.000",
+            jabatan:"assisten manajer"
+        },
+        {
+            nama: "agus",
+            jenisKelamin: "Pria",
+            umur: 35,
+            gaji: "Rp 10.000.000",
+            jabatan:"Supervisor"
+        },
+        {
+            nama: "alif",
+            jenisKelamin: "pria",
+            umur: 27,
+            gaji: "Rp 14.200.000",
+            jabatan:"Head manajer"
+        }
+    ];
+
+    const table = document.getElementById('pegawaiTable');
+
+    pegawai.forEach(p => {
+        const row = table.insertRow();
+        const cellNama = row.insertCell(0);
+        const cellJenisKelamin = row.insertCell(1);
+        const cellUmur = row.insertCell(2);
+        const cellGaji = row.insertCell(3);
+        const celljabatan = row.insertCell()
+
+        cellNama.textContent = p.nama;
+        cellJenisKelamin.textContent = p.jenisKelamin;
+        cellUmur.textContent = p.umur;
+        cellGaji.textContent = p.gaji;
+        celljabatan.textContent = p.jabatan;
+    });
+</script>
+
+</body>
+</html>
